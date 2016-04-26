@@ -1,10 +1,12 @@
 // local vars factory
 function getLocals(){
     return { 
-        layoutTitle: 'Template: Node with Passport Authentication'
+        layoutTitle: 'Template: Node with Passport Authentication',
+        brandName: 'Template'
     };
 };
 
+// export function 
 module.exports = function(app, passport) {
 
     // =====================================

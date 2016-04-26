@@ -7,9 +7,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
-        <!-- bootstrap
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-        -->
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         
         <!-- zurb foundation
         <link rel="stylesheet" href="css/foundation.css">
@@ -19,31 +18,66 @@
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
         -->
         
-        <!-- custom css
+        <!-- custom css -->
         <link rel="stylesheet" href="css/style.css">
-        -->
+        
     </head>
     <body>
         
         <!-- menu - paste menu markup here for css framework of choice--> 
-        <div>
-            <h2>This is the menu area. Paste in markup for css framework of choice here.</h2>
-        </div>
+        <!-- Fixed navbar for bootstrap -->
+        <nav class="navbar navbar-default navbar-fixed-top nav-margin-bottom">
+            <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">{{ brandName }}</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if (user) %}
+                        <li><a href="/profile">Username</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Signup</a></li>
+                    {% endif %}
+                </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
         
         <!-- body -->
-        {% block content %}{% endblock %}
+        <div class="body-container-custom">
+            
+            {% block content %}{% endblock %}
         
-        <!-- jquery
-        <script src="js/vendor/jquery.min.js"></script>
-        -->
+        </div>
         
-        <!-- css js for foundation 
-        <script src="js/vendor/what-input.min.js"></script>
+        <!-- jquery -->
+        <script src="js/jquery.min.js"></script>
+        
+        <!-- js for bootstrap -->
+        <script src="js/bootstrap.min.js"></script>    
+        
+        <!-- js for foundation 
+        <script src="js/what-input.min.js"></script>
         <script src="js/foundation.min.js"></script>
         <script>
             $(document).foundation();
         </script>
         -->
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
         
     </body>    
 </html>
