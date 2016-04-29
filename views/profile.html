@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    
+    <div class="well">
+       <h2>My Profile</h2>
+       <h4>Username: {{ user.local.username }}</h4>
+       <h4>Email: {{ user.local.email }}</h4>
+    </div>
+    
+{% endblock %}

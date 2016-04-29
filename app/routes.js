@@ -20,7 +20,20 @@ module.exports = function(app, passport) {
         // render view
         res.render('index', locals); 
     });
+    
+    // =====================================
+    // ABOUT PAGE ==========================
+    // =====================================
+    app.get('/about', function(req, res) {
+        // get locals object
+        var locals = getLocals();
+        locals.user = req.user;
+        
+        // render view
+        res.render('about', locals); 
+    });
 
+    // =====================================
     // LOGIN ===============================
     // =====================================
     // show the login form
@@ -40,6 +53,7 @@ module.exports = function(app, passport) {
         failureFlash : true // allow flash messages
     }));
 
+    // =====================================
     // SIGNUP ==============================
     // =====================================
     // show the signup form
@@ -59,6 +73,7 @@ module.exports = function(app, passport) {
         failureFlash : true // allow flash messages
     }));
 
+    // =====================================
     // PROFILE SECTION =====================
     // =====================================
     // we will want this protected so you have to be logged in to visit
@@ -72,6 +87,7 @@ module.exports = function(app, passport) {
         res.render('profile', locals);
     });
 
+    // =====================================
     // LOGOUT ==============================
     // =====================================
     app.get('/logout', function(req, res) {
