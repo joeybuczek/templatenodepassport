@@ -3,9 +3,15 @@
 {% block content %}
     
     <div class="well">
-       <h2>My Profile</h2>
-       <h4>Username: {{ user.local.username }}</h4>
-       <h4>Email: {{ user.local.email }}</h4>
+       <h2><i class="fa fa-user" aria-hidden="true"></i> Local</h2>
+       <p>Username: {{ user.local.username }}</p>
+       <p>Email: {{ user.local.email }}</p>
+    </div>
+    
+    <div class="well">
+       <h2><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</h2>
+       <p>Username: {{ user.twitter.username }}</p>
+       <p>Display name: {{ user.twitter.displayName }}</p>
     </div>
     
 {% endblock %}
