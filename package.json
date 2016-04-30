@@ -1,7 +1,7 @@
 {
   "name": "template_node_passport",
   "version": "1.0.0",
-  "description": "Template for NodeJS and Passport Authentication, Express for routing, and Swig as default template engine, MongoDB for database",
+  "description": "Template for NodeJS using Passport for Local and Twitter Authentications",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
